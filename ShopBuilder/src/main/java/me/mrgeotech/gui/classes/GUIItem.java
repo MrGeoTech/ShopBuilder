@@ -1,4 +1,4 @@
-package me.mrgeotech.gui.items;
+package me.mrgeotech.gui.classes;
 
 import java.util.List;
 
