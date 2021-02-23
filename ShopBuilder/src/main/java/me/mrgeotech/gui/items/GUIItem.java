@@ -17,7 +17,15 @@ public class GUIItem {
 	
 	private Triggered triggered;
 	
-	public GUIItem(Material mat, int amount, String name, List<String> lore, Triggered triggered) {
+	/**
+	 * Make a item that is specifically for a GUI inventory. It has added features to make it more useful than just an ItemStack.
+	 * 
+	 * @param mat The material that you want the item to be.
+	 * @param amount The amount of the material you want.
+	 * @param name The displayed name of the item.
+	 * @param lore The lore of the item.
+	 */
+	public GUIItem(Material mat, int amount, String name, List<String> lore) {
 		item = new ItemStack(mat, amount);
 		ItemMeta meta = item.getItemMeta();
 		meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
@@ -26,6 +34,30 @@ public class GUIItem {
 		
 	}
 	
+	/**
+	 * Make a item that is specifically for a GUI inventory. It has added features to make it more useful than just an ItemStack.
+	 * 
+	 * @param mat The material that you want the item to be.
+	 * @param amount The amount of the material you want.
+	 * @param name The displayed name of the item.
+	 * @param lore The lore of the item.
+	 * @param triggered The triggered process that you want this item to trigger when clicked.
+	 */
+	public GUIItem(Material mat, int amount, String name, List<String> lore, Triggered triggered) {
+		item = new ItemStack(mat, amount);
+		ItemMeta meta = item.getItemMeta();
+		meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
+		meta.setLore(lore);
+		item.setItemMeta(meta);
+		this.triggered = triggered;
+		
+	}
+	
+	/**
+	 * Set the triggered process of the item in the inventory.
+	 * 
+	 * @param triggered The triggered process that you want this item to trigger when clicked.
+	 */
 	public void setTriggered(Triggered triggered) {
 		this.triggered = triggered;
 	}
