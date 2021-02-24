@@ -8,13 +8,17 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import lombok.Getter;
+import lombok.Setter;
 import me.mrgeotech.processes.Triggered;
 import net.md_5.bungee.api.ChatColor;
 
 public class GUIItem {
 	
+	@Getter
 	private ItemStack item;
 	
+	@Setter
 	private Triggered triggered;
 	
 	/**
@@ -51,15 +55,6 @@ public class GUIItem {
 		item.setItemMeta(meta);
 		this.triggered = triggered;
 		
-	}
-	
-	/**
-	 * Set the triggered process of the item in the inventory.
-	 * 
-	 * @param triggered The triggered process that you want this item to trigger when clicked.
-	 */
-	public void setTriggered(Triggered triggered) {
-		this.triggered = triggered;
 	}
 	
 	@EventHandler
