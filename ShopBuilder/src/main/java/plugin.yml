@@ -1,0 +1,4 @@
+main: me.mrgeotech.main.ShopBuilder
+version: 1.0
+author: MrGeoTech
+api-version: 1.13
