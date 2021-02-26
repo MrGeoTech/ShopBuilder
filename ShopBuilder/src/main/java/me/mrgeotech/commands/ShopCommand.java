@@ -5,6 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import me.mrgeotech.guis.CreateGUI;
 import me.mrgeotech.main.ShopBuilder;
 
 public class ShopCommand implements CommandExecutor {
@@ -18,7 +19,8 @@ public class ShopCommand implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (check(sender)) return true;
-		
+		Player player = (Player) sender;
+		player.openInventory(new CreateGUI(main).getInventory());
 		return true;
 	}
 	
